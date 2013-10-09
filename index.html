@@ -1,7 +1,12 @@
 <html ng-app="demo">
 <head>
+
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/bootstrap-theme.css">
+
 <script src="js/lib/jquery/jquery.js"></script>
 <script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/bootstrap/bootstrap.js"></script>
 
 <!-- Angular UI Elemente -->
 
@@ -17,13 +22,23 @@
 <!-- Controller  -->
 
 <script src="js/app/controller/Demo.js"></script>
-<script src="js/app/controller/AlertDemo.js"></script>
 
 <title>AngularJs Demo Projekt</title>
 </head>
 <body>
 
-<div ng-controller="DemoCtrl"><p>{{info}}</p></div>
+<div ng-controller="DemoCtrl">
+    <p>{{info}}</p>
+    
+    <button ng-click="alert()" class="btn btn-info">{{alertButton}}</button>
+    
+    <div class="alert alert-info fade in" style="display: none;">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <strong>{{alertTitle}}</strong> {{alertText}}
+    </div>
+</div>
+
+
 
 </body>
 </html>
