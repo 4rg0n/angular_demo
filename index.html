@@ -1,9 +1,11 @@
+<!-- ng-app sagt Angular, dass dies eine Applikation ist. Das optionale "demo" zeigt das Modul an, welches für die Applikation benutzt werden soll -->
 <html ng-app="demo">
 <head>
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-theme.css">
 
+<!-- Libs -->
 <script src="js/lib/jquery/jquery.js"></script>
 <script src="js/lib/angular/angular.js"></script>
 <script src="js/lib/bootstrap/bootstrap.js"></script>
@@ -27,14 +29,65 @@
 </head>
 <body>
 
-<div ng-controller="DemoCtrl">
-    <p>{{info}}</p>
+<!-- ng-controller gibt an, dass alles was sich in dem DIV Container befindet von dem "DemoCtrl gesteuert wird" -->
+<div class="container" ng-controller="DemoCtrl">
     
-    <button ng-click="alert()" class="btn btn-info">{{alertButton}}</button>
+    <!-- Header -->
+    <div class="page-header">
+        <h1 id="title">AngularJs Demo Projekt</h1>
+        <img src="http://angularjs.org/img/AngularJS-large.png" alt="AngularJs">
+    </div>
     
-    <div class="alert alert-info fade in" style="display: none;">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <strong>{{alertTitle}}</strong> {{alertText}}
+    
+    <!-- Einfache Ausgabe einer Variablen in HTML -->
+    <div class="container">
+        <h2>Info Ausgabe</h2>
+        <p>{{info}}</p>
+    </div>
+    
+    <!-- ng-click führt bei einem Klick die angegebene Function im Controller aus -->
+    <div class="container">
+        <h2>Alert Beispiel</h2>
+        <div class="container">
+            <button ng-click="alert()" class="btn btn-info">{{alertButton}}</button>
+        </div>
+                
+        <!-- Mit ng-show lassen sich Elemente ein bzw. ausblenden, wenn ihr Wert true ist -->
+        <div class="container">
+            <div class="alert alert-info fade in" ng-show="show">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>{{alertTitle}}</strong> {{alertText}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Model Beispiel</h2>    
+        <div>
+            <!-- Ein ng-model wird von Angular überwacht und der Wert in Echtzeit geupdatet  -->
+                    
+            <input type="text" ng-model="name" class="form-control" placeholder="Dein Name">
+            Hallo {{name}}, du bist behindert!!
+        </div>    
+    </div>
+    
+    <div class="container">
+        <h2>Repeat Beispiel</h2>
+        <ul>
+            <!-- ng-repeat wiederholt das Element solange, wie es Elemente in users gibt (foreach) -->
+            <li ng-repeat="user in users" ng-animate="'repeat'">{{user.name}} ist {{user.alter}} Jahre alt.</li>
+        </ul>
+    </div>
+    
+    <div class="container">
+        <h2>CSS Klassen Beispiel</h2>
+        <button ng-click="toggle()" type="button" class="btn btn-primary" data-toggle="button">Toggle Valid</button>
+        
+        <!-- Mit ng-class werden bestimmte CSS Klassen angewandt, wenn die Bedingung dahinter true ist -->
+        <div class="form-group" ng-class="{ 'has-success': toggled, 'has-error': !toggled }">
+            <label class="control-label" for="toggleInput">Irgend son Input</label>
+            <input type="text" class="form-control" placeholder="Muh" id="toggleInput">
+        </div>
     </div>
 </div>
 
