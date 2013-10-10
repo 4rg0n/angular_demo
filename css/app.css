@@ -1,0 +1,19 @@
+.de-example {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    
+    -webkit-transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s; 
+    transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s;
+}
+
+.de-example:hover {
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+   
+    -webkit-transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s; 
+    transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s;
+}

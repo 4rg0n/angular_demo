@@ -4,6 +4,7 @@
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-theme.css">
+<link rel="stylesheet" href="css/app.css">
 
 <!-- Libs -->
 <script src="js/lib/jquery/jquery.js"></script>
@@ -40,13 +41,13 @@
     
     
     <!-- Einfache Ausgabe einer Variablen in HTML -->
-    <div class="container">
+    <div class="container de-example">
         <h2>Info Ausgabe</h2>
         <p>{{info}}</p>
     </div>
     
     <!-- ng-click führt bei einem Klick die angegebene Function im Controller aus -->
-    <div class="container">
+    <div class="container de-example">
         <h2>Alert Beispiel</h2>
         <div class="container">
             <button ng-click="alert()" class="btn btn-info">{{alertButton}}</button>
@@ -61,7 +62,7 @@
         </div>
     </div>
     
-    <div class="container">
+    <div class="container de-example">
         <h2>Model Beispiel</h2>    
         <div>
             <!-- Ein ng-model wird von Angular überwacht und der Wert in Echtzeit geupdatet  -->
@@ -71,7 +72,7 @@
         </div>    
     </div>
     
-    <div class="container">
+    <div class="container de-example">
         <h2>Repeat Beispiel</h2>
         <ul>
             <!-- ng-repeat wiederholt das Element solange, wie es Elemente in users gibt (foreach) -->
@@ -79,7 +80,7 @@
         </ul>
     </div>
     
-    <div class="container">
+    <div class="container de-example">
         <h2>CSS Klassen Beispiel</h2>
         <button ng-click="toggle()" type="button" class="btn btn-primary" data-toggle="button">Toggle Valid</button>
         
