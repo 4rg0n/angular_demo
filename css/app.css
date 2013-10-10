@@ -17,3 +17,36 @@
     -webkit-transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s; 
     transition: border-color ease-in-out 0.5s, background-color ease-in-out 0.5s;
 }
+
+
+/* Repeat Animation */
+
+
+/* Ausgangspunkt der Animation */
+.repeat-anim.ng-enter {
+    webkit-transition: 1s linear all;
+    transition: 1s linear all;
+    opacity: 0;
+    line-height: 0;
+}
+
+
+.repeat-anim.ng-leave {
+    webkit-transition: 1s linear all;
+    transition: 1s linear all;
+    opacity: 1;
+    line-height: 20px;
+}
+
+
+/* Animationsziel */
+.repeat-anim.ng-enter.ng-enter-active {
+    opacity: 1;
+    line-height: 20px;
+}
+
+
+.repeat-anim.ng-leave.ng-leave-active {
+    opacity: 0;
+    line-height: 0;
+}

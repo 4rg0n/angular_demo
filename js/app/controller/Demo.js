@@ -1,3 +1,6 @@
+/**
+ * DemoCtrl
+ */
 demoApp.controller('DemoCtrl', function($scope) {
     
     $scope.info = "Wenn du das liest, bist du behindert!!";
@@ -10,7 +13,9 @@ demoApp.controller('DemoCtrl', function($scope) {
         {"name": "behindert!", alter: 25}     
     ];
     
-    //Alert 
+    /**
+     * Alert
+     */ 
     $scope.alert = function() {
         $scope.alertTitle = 'BEHINDERT!';
         $scope.alertText = 'Jetzt hast du die Bestätigung!';
@@ -18,11 +23,25 @@ demoApp.controller('DemoCtrl', function($scope) {
         $scope.show = true;
     };
     
-    $scope.toggled = true;
     
-    //Toggle
+    /**
+     * Toggle
+     */
+    $scope.toggled = true;
+        
     $scope.toggle = function() {
         $scope.toggled = !$scope.toggled;
     }
+    
+    /**
+     * Animate
+     */
+    $scope.animateItems = [1,2,3,4,5,6,7,8,9];
+    
+    //über CSS
+    $scope.replaceItem = function() {
+        $scope.animateItems.shift();
+        $scope.animateItems.push(Math.floor(Math.random()*1000000000));
+    };
     
 });

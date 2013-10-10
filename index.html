@@ -1,6 +1,7 @@
-<!-- ng-app sagt Angular, dass dies eine Applikation ist. Das optionale "demo" zeigt das Modul an, welches fÃ¼r die Applikation benutzt werden soll -->
+<!-- ng-app sagt Angular, dass dies eine Applikation ist. Das optionale "demo" zeigt das Modul an, welches für die Applikation benutzt werden soll -->
 <html ng-app="demo">
 <head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/bootstrap-theme.css">
@@ -9,6 +10,7 @@
 <!-- Libs -->
 <script src="js/lib/jquery/jquery.js"></script>
 <script src="js/lib/angular/angular.js"></script>
+<script src="js/lib/angular/angular-animate.js"></script>
 <script src="js/lib/bootstrap/bootstrap.js"></script>
 
 <!-- Angular UI Elemente -->
@@ -40,15 +42,18 @@
     </div>
     
     
+    <h2>Info Ausgabe</h2>
+    
     <!-- Einfache Ausgabe einer Variablen in HTML -->
     <div class="container de-example">
-        <h2>Info Ausgabe</h2>
         <p>{{info}}</p>
     </div>
     
-    <!-- ng-click fÃ¼hrt bei einem Klick die angegebene Function im Controller aus -->
+    
+    <h2>Alert Beispiel</h2>
+    
+    <!-- ng-click führt bei einem Klick die angegebene Function im Controller aus -->
     <div class="container de-example">
-        <h2>Alert Beispiel</h2>
         <div class="container">
             <button ng-click="alert()" class="btn btn-info">{{alertButton}}</button>
         </div>
@@ -62,26 +67,32 @@
         </div>
     </div>
     
+    
+    <h2>Model Beispiel</h2>
+    
     <div class="container de-example">
-        <h2>Model Beispiel</h2>    
         <div>
-            <!-- Ein ng-model wird von Angular Ã¼berwacht und der Wert in Echtzeit geupdatet  -->
+            <!-- Ein ng-model wird von Angular überwacht und der Wert in Echtzeit geupdatet  -->
                     
             <input type="text" ng-model="name" class="form-control" placeholder="Dein Name">
             Hallo {{name}}, du bist behindert!!
         </div>    
     </div>
     
+    
+    <h2>Repeat Beispiel</h2>
+    
     <div class="container de-example">
-        <h2>Repeat Beispiel</h2>
         <ul>
             <!-- ng-repeat wiederholt das Element solange, wie es Elemente in users gibt (foreach) -->
             <li ng-repeat="user in users" ng-animate="'repeat'">{{user.name}} ist {{user.alter}} Jahre alt.</li>
         </ul>
     </div>
     
+    
+    <h2>CSS Klassen Beispiel</h2>
+    
     <div class="container de-example">
-        <h2>CSS Klassen Beispiel</h2>
         <button ng-click="toggle()" type="button" class="btn btn-primary" data-toggle="button">Toggle Valid</button>
         
         <!-- Mit ng-class werden bestimmte CSS Klassen angewandt, wenn die Bedingung dahinter true ist -->
@@ -90,6 +101,24 @@
             <input type="text" class="form-control" placeholder="Muh" id="toggleInput">
         </div>
     </div>
+    
+    
+    <h2>Animationen</h2>
+    
+    <!-- Animationen -->
+    <div class="container de-example">
+        <h3>Repeat (CSS Animation)</h3>
+        
+        <div class="alert alert-info">Funktioniert für: <em>enter</em>, <em>leave</em>, <em>move</em>. Keine Ahnung, wie move funzt...</div>
+        
+        <button ng-click="replaceItem()" type="button" class="btn btn-primary">Muh!</button>
+        <ul>
+            <!-- Die Animation wird durch die CSS Klasse repeat-anim gesteuert -->
+            <li ng-repeat="item in animateItems" class="repeat-anim">{{item}}</li>
+        </ul>
+        
+    </div>
+    
 </div>
 
 
