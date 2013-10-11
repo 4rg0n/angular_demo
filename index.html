@@ -11,6 +11,7 @@
 <script src="js/lib/jquery/jquery.js"></script>
 <script src="js/lib/angular/angular.js"></script>
 <script src="js/lib/angular/angular-animate.js"></script>
+<script src="js/lib/angular/angular-route.js"></script>
 <script src="js/lib/bootstrap/bootstrap.js"></script>
 
 <!-- Angular UI Elemente -->
@@ -27,6 +28,8 @@
 <!-- Controller  -->
 
 <script src="js/app/controller/Demo.js"></script>
+<script src="js/app/controller/ViewDemo.js"></script>
+<script src="js/app/controller/Home.js"></script>
 
 <title>AngularJs Demo Projekt</title>
 </head>
@@ -105,18 +108,41 @@
     
     <h2>Animationen</h2>
     
-    <!-- Animationen -->
+    <h3>Repeat (CSS Animation)</h3>
+    
     <div class="container de-example">
-        <h3>Repeat (CSS Animation)</h3>
+        
         
         <div class="alert alert-info">Funktioniert für: <em>enter</em>, <em>leave</em>, <em>move</em>. Keine Ahnung, wie move funzt...</div>
         
         <button ng-click="replaceItem()" type="button" class="btn btn-primary">Muh!</button>
+        
+        <p>
         <ul>
             <!-- Die Animation wird durch die CSS Klasse repeat-anim gesteuert -->
             <li ng-repeat="item in animateItems" class="repeat-anim">{{item}}</li>
         </ul>
+        </p>
+    </div>
+    
+    <h2>View</h2>
+    
+    <div class="container de-example">
         
+        <div ng-controller="ViewDemoCtrl">
+        
+        <!-- Navigation -->
+        <ul class="nav nav-pills">
+          <li><a href="#/home">Home</a></li>
+          <li><a href="muh">Muh</a></li>
+          <li><a href="moep">Möp</a></li>
+        </ul>
+    
+        <div ng-view>
+        
+        </div>
+        
+        </div>
     </div>
     
 </div>

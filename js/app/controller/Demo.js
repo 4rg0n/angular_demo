@@ -1,7 +1,7 @@
 /**
  * DemoCtrl
  */
-demoApp.controller('DemoCtrl', function($scope) {
+var DemoCtrl = demoApp.controller('DemoCtrl', function($scope) {
     
     $scope.info = "Wenn du das liest, bist du behindert!!";
        
@@ -36,7 +36,12 @@ demoApp.controller('DemoCtrl', function($scope) {
     /**
      * Animate
      */
-    $scope.animateItems = [1,2,3,4,5,6,7,8,9];
+    $scope.animateItems = [];
+    
+    //Array mit Random Zahlen befüllen
+    for (var i = 0; i <= 10; i++) {
+        $scope.animateItems.push(Math.floor(Math.random()*1000000000));
+    }
     
     //über CSS
     $scope.replaceItem = function() {
